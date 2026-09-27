@@ -59,10 +59,16 @@ Traffic Data -> Hadoop HDFS -> MapReduce -> Historical Analytics
 *Note: Future advanced modules (E-challan generation, God's Eye, GPS tracking) are planned but not included in these initial phases.*
 
 ## Current Phase Status
-**PHASE 3: PARTIALLY COMPLETE** - Kafka real-time ingestion architecture implemented (Producer, Consumer, Schema validation). Code logic is fully complete, but runtime validation is blocked pending a local Kafka broker installation.
+**PHASE 4: IMPLEMENTED — KAFKA RUNTIME INTEGRATION BLOCKED** - Apache Spark Structured Streaming pipeline has been implemented to parse, validate, transform, and window-aggregate traffic events in real-time. Code logic and unit tests are complete, but live streaming is blocked pending a local Kafka broker and Spark Hadoop environment on the host machine.
+
+**PHASE 5: IMPLEMENTED — HADOOP RUNTIME BLOCKED** - Apache Hadoop HDFS and MapReduce architecture has been created to handle historical batch analytics. Python Hadoop Streaming scripts (Mappers/Reducers) and HDFS management scripts are complete and unit tested, but actual deployment is blocked since Hadoop/HDFS is not installed on the Windows host.
+
+**PHASE 6: IMPLEMENTED — MONGODB RUNTIME BLOCKED** - MongoDB NoSQL analytical persistence and ingestion architecture is complete. Analytical aggregation pipelines, document schemas, and unique index configurations are implemented and unit tested, but live execution is blocked as MongoDB is not installed locally.
+
+**PHASE 7: IMPLEMENTED — HIVE RUNTIME BLOCKED** - Apache Hive SQL-based batch analytical architecture is complete. HQL scripts for schema generation, external HDFS table mapping, internal ORC tables, and full analytical querying (vehicle, junction, sensor, density, weather, incident, time, summary) are created and validated statically. Execution is blocked as Hive and Hadoop are not installed locally.
 
 ## Architecture Pipeline
-`Traffic Generator` -> `Kafka Producer` -> `Kafka (traffic-events)` -> `Consumer` -> `(Spark Streaming - Planned for Phase 4)`
+`Traffic Generator` -> `Kafka / Spark` | `HDFS / MapReduce / Hive` | `MongoDB (NoSQL Analytics)`
 
 ## Installation Prerequisites
 Ensure the following tools are installed:
