@@ -67,6 +67,10 @@ Traffic Data -> Hadoop HDFS -> MapReduce -> Historical Analytics
 
 **PHASE 7: IMPLEMENTED — HIVE RUNTIME BLOCKED** - Apache Hive SQL-based batch analytical architecture is complete. HQL scripts for schema generation, external HDFS table mapping, internal ORC tables, and full analytical querying (vehicle, junction, sensor, density, weather, incident, time, summary) are created and validated statically. Execution is blocked as Hive and Hadoop are not installed locally.
 
+**PHASE 8: IMPLEMENTED — PIG RUNTIME BLOCKED** - Apache Pig data-flow analytics have been implemented for ETL, batch transformation, and metric aggregation. Pig Latin scripts covering projection, filtering, grouping, aggregation, sorting, and summary statistics are complete and statically tested, but live execution is blocked as Apache Pig and Hadoop are not installed locally.
+
+**PHASE 9: IMPLEMENTED — BLOOM FILTER DUPLICATE DETECTION** - A custom Bloom Filter has been implemented from scratch in Python to probabilistically detect duplicate traffic events. The implementation features deterministic double-hashing (MD5 + SHA-256), automatic optimal parameter calculation, and a low memory footprint suitable for big data streams. Tests and benchmarks are complete and successful. Note: It is not yet fully integrated into Kafka/Spark streams in this phase.
+
 ## Architecture Pipeline
 `Traffic Generator` -> `Kafka / Spark` | `HDFS / MapReduce / Hive` | `MongoDB (NoSQL Analytics)`
 
