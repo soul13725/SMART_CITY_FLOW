@@ -1,0 +1,11 @@
+# R Analytics
+
+This module implements statistical analysis and visualization of the Smart City traffic dataset.
+
+## Required R Packages
+readr
+dplyr
+tidyr
+ggplot2
+lubridate
+corrplot

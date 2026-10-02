@@ -71,6 +71,8 @@ Traffic Data -> Hadoop HDFS -> MapReduce -> Historical Analytics
 
 **PHASE 9: IMPLEMENTED — BLOOM FILTER DUPLICATE DETECTION** - A custom Bloom Filter has been implemented from scratch in Python to probabilistically detect duplicate traffic events. The implementation features deterministic double-hashing (MD5 + SHA-256), automatic optimal parameter calculation, and a low memory footprint suitable for big data streams. Tests and benchmarks are complete and successful. Note: It is not yet fully integrated into Kafka/Spark streams in this phase.
 
+**PHASE 10: IMPLEMENTED — R ANALYTICS RUNTIME BLOCKED** - The independent R Analytics module has been fully implemented, providing a suite of scripts for descriptive statistics, vehicle, junction, density, speed, weather, incident, time-series, and correlation analysis. However, runtime execution and generation of plots/CSVs are blocked since R and the required packages (`dplyr`, `ggplot2`, etc.) are not installed on the host machine. Test suites have been written but are blocked from execution.
+
 ## Architecture Pipeline
 `Traffic Generator` -> `Kafka / Spark` | `HDFS / MapReduce / Hive` | `MongoDB (NoSQL Analytics)`
 
